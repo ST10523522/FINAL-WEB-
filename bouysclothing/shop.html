@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Shop - Bouys</title>
+<style>
+body{background:black;color:white;font-family:Arial;margin:0}
+header{background:#111;padding:15px;display:flex;justify-content:space-between;align-items:center}
+a{color:white;text-decoration:none;margin-left:10px}
+#dynamic-products{display:grid;grid-template-columns:1fr 1fr;gap:15px;padding:20px}
+.product-card{background:white;color:black;padding:15px;border-radius:12px;text-align:center}
+</style>
+</head>
+<body>
+
+<header>
+<div>BOUYSCLOTHING</div>
+<nav>
+<a href="index.html">HOME</a>
+<a href="shop.html">SHOP</a>
+<a href="cart.html">CART (<span id="cart-count">0</span>)</a>
+</nav>
+</header>
+
+<div style="text-align:center;padding:20px">
+<h2>SHOP ALL</h2>
+<input type="text" id="searchInput" placeholder="Search products..." oninput="filterProducts()" style="padding:10px;width:80%;border-radius:20px;border:none;">
+</div>
+
+<div id="dynamic-products"></div>
+
+<script>
+// SAME CODE AS CART.JS - NOW INSIDE HTML SO IT MUST WORK
+let cart = JSON.parse(localStorage.getItem('bouyzCart')) || [];
+
+function addToCart(name, price) {
+cart.push({name: name, price: price});
+localStorage.setItem('bouyzCart', JSON.stringify(cart));
+updateCartCount();
+alert(name + " added - R" + price);
+}
+
+function updateCartCount() {
+let el = document.getElementById('cart-count');
+if (el) el.innerText = cart.length;
+}
+
+const products = [
+{name: 'Diesel Tee - black', price: 299},
+{name: 'Diesel Pants - Black', price: 499},
+{name: 'Diesel Hoodie - Black', price: 599},
+{name: 'Diesel Jacket', price: 699}
+];
+
+function loadProducts(list) {
+if (!list) list = products;
+let container = document.getElementById('dynamic-products');
+if (!container) return;
+container.innerHTML = '';
+list.forEach(function(p) {
+let html = '<div class="product-card"><h3>' + p.name + '</h3><p style="color:red;font-weight:bold">R' + p.price + '</p><button onclick="addToCart('' + p.name + '',' + p.price + ')" style="background:black;color:white;padding:10px 20px;border:none;border-radius:20px;cursor:pointer;width:100%">Add to Cart</button></div>';
+container.innerHTML += html;
+});
+}
+
+function filterProducts() {
+let q = document.getElementById('searchInput').value.toLowerCase();
+let filtered = products.filter(function(p){ return p.name.toLowerCase().includes(q); });
+loadProducts(filtered);
+}
+
+updateCartCount();
+loadProducts();
+</script>
+
+<script src="js_assets/cart.js"></script>
+</body>
+</html>

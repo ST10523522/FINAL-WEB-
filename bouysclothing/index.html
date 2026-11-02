@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Bouyz Clothing | Diesel Inspired Streetwear R299 | Hatfield Pretoria</title>
+<meta name="description" content="The Bouyz Clothing EST 2023 - Local streetwear brand Hatfield Pretoria. Diesel inspired tees, pants, hoodies from R299.">
+<meta name="keywords" content="Bouyz clothing, streetwear Pretoria, Diesel inspired affordable, Hatfield local brand">
+<link rel="stylesheet" href="css_assets/myfirststyle.css">
+<!-- Leaflet CSS for Interactive Map -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+</head>
+<body>
+
+<!-- Header -->
+<header>
+<img src="_images/logo.jpg" alt="The Bouyz Clothing logo affordable streetwear Pretoria">
+<nav>
+<a href="index.html">HOME</a>
+<a href="shop.html">SHOP</a>
+<a href="gallery.html">GALLERY</a>
+<a href="about.html">ABOUT</a>
+<a href="enquiry.html">ENQUIRY</a>
+<a href="contact.html">CONTACT</a>
+<a href="cart.html">CART (<span id="cart-count">0</span>)</a>
+</nav>
+</header>
+
+<!-- Hero Section - Fixes Home Not Communicating -->
+<div class="hero">
+<h1>THE BOUYZ CLOTHING</h1>
+<p class="sub">EST. 2023 | HATFIELD PRETORIA</p>
+
+<div class="welcome-box">
+<h2>Welcome to The Bouyz Family</h2>
+<p>
+We are local from Hatfield, Pretoria. We saw Diesel jackets selling for R3000
+in the mall, but students can't afford that. So we made same drip for
+<strong>R299-R699</strong>. Diesel-inspired premium streetwear, local prints,
+local culture. Born in Pitori, made for the streets.
+</p>
+<br>
+<a href="shop.html" class="btn btn-white">SHOP NOW FROM R299</a>
+</div>
+</div>
+
+<!-- Search Bar - Dynamic Content Requirement -->
+<div class="search-bar">
+<input type="text" id="searchInput" placeholder="Search products - e.g. Hoodie, 299, Diesel" aria-label="Search products">
+</div>
+
+<!-- Products Loaded Dynamically with JavaScript -->
+<div class="products-container" id="dynamic-products">
+<!-- Products will load here from JavaScript -->
+</div>
+
+<!-- Tabs and Accordion Section - Interactive Elements -->
+<div class="content-wrap">
+
+<div class="tabs">
+<button class="tab-btn active" onclick="openTab(event,'tab1')">Our Story</button>
+<button class="tab-btn" onclick="openTab(event,'tab2')">Sizes Guide</button>
+<button class="tab-btn" onclick="openTab(event,'tab3')">Delivery</button>
+</div>
+
+<div id="tab1" class="tab-content active">
+Started 2023 by students in Hatfield. 500+ customers across Gauteng.
+All designs local, prints done in Pretoria. Mission: make trendy affordable.
+</div>
+
+<div id="tab2" class="tab-content">
+S-XL available. Over-sized fit. Model 1.82m wearing L.
+S=Chest 100cm, M=108cm, L=116cm, XL=124cm.
+</div>
+
+<div id="tab3" class="tab-content">
+Pretoria same day R50. Gauteng 1-2 days R80.
+Nationwide 2-4 days R120. Free delivery over R1000.
+Pickup Hatfield Plaza free.
+</div>
+
+<!-- FAQ Accordion -->
+<div class="accordion">
+<h3 style="text-align:center; margin:20px 0;">FAQ - Click to Open</h3>
+
+<div class="acc-item">
+<div class="acc-header" onclick="toggleAcc('acc1')">
+Are you Diesel original? <span>+</span>
+</div>
+<div id="acc1" class="acc-body">
+No. Diesel-INSPIRED local brand. Not affiliated with Diesel. Affordable version made locally.
+</div>
+</div>
+
+<div class="acc-item">
+<div class="acc-header" onclick="toggleAcc('acc2')">
+Where are you located? <span>+</span>
+</div>
+<div id="acc2" class="acc-body">
+Hatfield, Pretoria. WhatsApp 0680266436. Visit by appointment.
+</div>
+</div>
+
+<div class="acc-item">
+<div class="acc-header" onclick="toggleAcc('acc3')">
+Do you allow returns? <span>+</span>
+</div>
+<div id="acc3" class="acc-body">
+Yes 7-day returns if unworn with tags. Customer pays return courier.
+</div>
+</div>
+</div>
+
+<!-- Interactive Map - Leaflet.js Requirement -->
+<h3 style="text-align:center; margin-top:50px;">Find Us - Hatfield, Pretoria</h3>
+<div id="map"></div>
+</div>
+
+<!-- Lightbox for Gallery -->
+<div id="lightbox" onclick="closeLightbox()">
+<span>×</span>
+<img id="lightbox-img" alt="Enlarged product view">
+</div>
+
+<!-- Modal for Add to Cart Feedback -->
+<div id="modal">
+<div class="modal-content">
+<p id="modal-text"></p>
+<br>
+<button class="btn btn-white" onclick="closeModal()">OK</button>
+</div>
+</div>
+
+<!-- Footer -->
+<footer>
+<p>The Bouyz Clothing EST 2023 | Hatfield Pretoria | 0680266436</p>
+<p><a href="sitemap.xml" style="color:#666;">Sitemap</a> | <a href="robots.txt" style="color:#666;">Robots</a></p>
+</footer>
+
+<script src="js_assets/cart.js"></script>
+<script src="js_assets/main.js"></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+// Initialize Map - Hatfield Pretoria
+var map = L.map('map').setView([-25.7479, 28.2293], 13);
+L.tileLayer('https://{s}.basemaps.cartoncdn.com/light_all/{z}/{x}/{y}{r}.png',{
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">openStreetMap</a> &copy; <a href="https://carto.com/">CARTO</a>',
+    subdomains: 'abcd',
+    maxZoom: 20
+}).addTo(map);
+L.marker([-25.7479, 28.2293]).addTo(map).bindPopup('The Bouyz Clothing - Hatfield, Pretoria<br>0680266436').openPopup();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,489 @@
+/* The Bouyz Clothing - My First Style - Part 2 & 3 Final /
+/ Author: Bouyz Student - Hatfield Pretoria */
+
+body {
+margin: 0;
+padding: 0;
+background-color: #0a0a0a;
+color: white;
+font-family: Arial, sans-serif;
+line-height: 1.6;
+}
+
+/* Header Section */
+header {
+background-color: black;
+padding: 15px 5%;
+display: flex;
+justify-content: space-between;
+align-items: center;
+position: sticky;
+top: 0;
+border-bottom: 1px solid #222;
+}
+
+header img {
+width: 90px;
+border-radius: 50%;
+}
+
+/* Navigation */
+nav {
+display: flex;
+gap: 18px;
+flex-wrap: wrap;
+}
+
+nav a {
+color: white;
+text-decoration: none;
+font-weight: bold;
+font-size: 13px;
+letter-spacing: 1px;
+}
+
+nav a:hover {
+color: #ff3c3c;
+}
+
+/* Hero Section - Home Communication Fix */
+.hero {
+text-align: center;
+padding: 90px 20px;
+background-color: #111;
+animation: fadeIn 1s ease;
+}
+
+.hero h1 {
+font-size: 44px;
+font-weight: bold;
+margin-bottom: 10px;
+}
+
+.hero h2 {
+font-size: 32px;
+margin-bottom: 10px;
+}
+
+.sub {
+color: #aaa;
+letter-spacing: 3px;
+font-size: 12px;
+margin-bottom: 30px;
+}
+
+/* Welcome Box - Fixes Home Not Communicating */
+.welcome-box {
+background-color: rgba(255,255,255,0.04);
+border: 1px solid #1f1f1f;
+max-width: 850px;
+margin: 0 auto;
+padding: 35px;
+border-radius: 16px;
+}
+
+.welcome-box h2 {
+color: white;
+margin-bottom: 15px;
+}
+
+.welcome-box p {
+color: #bbb;
+line-height: 1.8;
+font-size: 15px;
+}
+
+/* Buttons */
+.btn {
+display: inline-block;
+padding: 13px 35px;
+border-radius: 30px;
+text-decoration: none;
+font-weight: bold;
+letter-spacing: 1px;
+transition: 0.3s;
+border: none;
+cursor: pointer;
+}
+
+.btn-white {
+background-color: white;
+color: black;
+}
+
+.btn-white:hover {
+background-color: #ff3c3c;
+color: white;
+transform: translateY(-2px);
+}
+
+/* Search Bar - Dynamic Content Requirement */
+.search-bar {
+text-align: center;
+padding: 20px;
+background-color: #0f0f0f;
+}
+
+.search-bar input {
+width: 90%;
+max-width: 500px;
+padding: 14px 20px;
+border-radius: 30px;
+border: 1px solid #333;
+background-color: #111;
+color: white;
+font-size: 15px;
+}
+
+/* Products Grid */
+.products-container {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+gap: 20px;
+padding: 40px 5%;
+}
+
+/* Product Card - Add to Cart Fix */
+.product {
+background-color: #111;
+border: 1px solid #222;
+border-radius: 16px;
+overflow: hidden;
+transition: 0.4s;
+}
+
+.product:hover {
+transform: translateY(-8px);
+border-color: #444;
+}
+
+.product img {
+width: 100%;
+height: 300px;
+object-fit: cover;
+display: block;
+cursor: pointer;
+}
+
+.product-info {
+padding: 18px;
+background-color: white;
+color: black;
+}
+
+.product-info h3 {
+font-size: 15px;
+margin-bottom: 5px;
+color: black;
+}
+
+.price {
+color: #b00000;
+font-weight: bold;
+font-size: 18px;
+margin-bottom: 12px;
+}
+
+.product-info button {
+width: 100%;
+background-color: black;
+color: white;
+border: none;
+padding: 12px;
+border-radius: 25px;
+font-weight: bold;
+cursor: pointer;
+transition: 0.3s;
+}
+
+.product-info button:hover {
+background-color: white;
+color: black;
+border: 1px solid black;
+}
+
+/* Content Wrapper */
+.content-wrap {
+max-width: 1100px;
+margin: 50px auto;
+padding: 0 20px;
+}
+
+/* Tabs - Interactive Elements Requirement */
+.tabs {
+display: flex;
+gap: 10px;
+justify-content: center;
+margin: 30px 0;
+}
+
+.tab-btn {
+padding: 10px 25px;
+border-radius: 25px;
+border: 1px solid #333;
+background-color: #111;
+color: white;
+cursor: pointer;
+}
+
+.tab-btn.active {
+background-color: white;
+color: black;
+}
+
+.tab-content {
+display: none;
+max-width: 800px;
+margin: 0 auto;
+padding: 20px;
+background-color: #111;
+border-radius: 12px;
+}
+
+.tab-content.active {
+display: block;
+animation: fadeIn 0.5s;
+}
+
+/* Accordion - Interactive Elements */
+.accordion {
+margin-top: 40px;
+}
+
+.acc-item {
+border: 1px solid #222;
+margin-bottom: 10px;
+border-radius: 10px;
+overflow: hidden;
+}
+
+.acc-header {
+padding: 15px;
+background-color: #111;
+cursor: pointer;
+font-weight: bold;
+display: flex;
+justify-content: space-between;
+}
+
+.acc-body {
+display: none;
+padding: 15px;
+background-color: #0a0a0a;
+color: #bbb;
+}
+
+.acc-body.open {
+display: block;
+}
+
+/* Map - Interactive Map Requirement */
+#map {
+height: 350px;
+border-radius: 16px;
+margin: 20px 0;
+border: 1px solid #222;
+}
+
+/* Cart Page */
+.cart-page {
+max-width: 800px;
+margin: 40px auto;
+background-color: #111;
+padding: 30px;
+border-radius: 16px;
+border: 1px solid #222;
+}
+
+.cart-item {
+display: flex;
+justify-content: space-between;
+padding: 15px 0;
+border-bottom: 1px solid #222;
+color: white;
+}
+
+/* Forms - Form Controls Requirement */
+.form-container {
+max-width: 600px;
+margin: 40px auto;
+background-color: #111;
+padding: 30px;
+border-radius: 16px;
+border: 1px solid #222;
+}
+
+.form-container label {
+font-size: 13px;
+color: #aaa;
+margin-top: 10px;
+display: block;
+}
+
+.form-container input {
+width: 100%;
+padding: 13px;
+margin: 10px 0;
+border-radius: 8px;
+border: 1px solid #333;
+background-color: black;
+color: white;
+}
+
+.form-container textarea {
+width: 100%;
+padding: 13px;
+margin: 10px 0;
+border-radius: 8px;
+border: 1px solid #333;
+background-color: black;
+color: white;
+}
+
+.form-container select {
+width: 100%;
+padding: 13px;
+margin: 10px 0;
+border-radius: 8px;
+border: 1px solid #333;
+background-color: black;
+color: white;
+}
+
+.form-container button {
+background-color: white;
+color: black;
+padding: 13px;
+width: 100%;
+border: none;
+border-radius: 30px;
+font-weight: bold;
+cursor: pointer;
+margin-top: 10px;
+}
+
+.form-container button:hover {
+background-color: #ff3c3c;
+color: white;
+}
+
+/* Error and Success Messages - Validation Requirement */
+.error {
+color: #ff5a5a;
+font-size: 13px;
+min-height: 18px;
+margin-top: 5px;
+}
+
+.success {
+color: #0f0;
+font-size: 13px;
+margin-top: 10px;
+}
+
+/* Lightbox - Gallery Lightbox Requirement */
+#lightbox {
+display: none;
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0,0,0,0.95);
+z-index: 2000;
+justify-content: center;
+align-items: center;
+}
+
+#lightbox img {
+max-width: 90%;
+max-height: 85%;
+border-radius: 12px;
+}
+
+#lightbox span {
+position: absolute;
+top: 20px;
+right: 30px;
+font-size: 40px;
+color: white;
+cursor: pointer;
+}
+
+/* Modal - Interactive Element */
+#modal {
+display: none;
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0,0,0,0.8);
+z-index: 3000;
+justify-content: center;
+align-items: center;
+}
+
+.modal-content {
+background-color: #111;
+padding: 30px;
+border-radius: 16px;
+border: 1px solid #333;
+text-align: center;
+max-width: 400px;
+}
+
+/* Footer */
+footer {
+text-align: center;
+padding: 30px;
+background-color: black;
+border-top: 1px solid #222;
+color: #666;
+margin-top: 50px;
+font-size: 13px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+from {
+opacity: 0;
+transform: translateY(20px);
+}
+to {
+opacity: 1;
+transform: translateY(0);
+}
+}
+
+/* Responsive - Mobile Friendliness Fix for Part 2 */
+@media (max-width: 768px) {
+header {
+flex-direction: column;
+gap: 15px;
+}
+
+.hero h1 {
+font-size: 32px;
+}
+
+.products-container {
+grid-template-columns: 1fr 1fr;
+padding: 15px;
+gap: 12px;
+}
+
+.product img {
+height: 200px;
+}
+}
+
+@media (max-width: 480px) {
+.products-container {
+grid-template-columns: 1fr;
+}
+
+.hero {
+padding: 50px 15px;
+}
+}

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gallery Lightbox | The Bouyz Clothing Lookbook</title>
+<meta name="description" content="Gallery of The Bouyz Clothing - Click images for lightbox view. Streetwear lookbook.">
+<meta name="keywords" content="Bouyz gallery, streetwear lookbook Pretoria, Diesel inspired gallery">
+<link rel="stylesheet" href="css_assets/myfirststyle.css">
+</head>
+<body>
+
+<header>
+<img src="_images/logo.jpg" alt="Bouyz gallery logo streetwear lookbook">
+<nav>
+<a href="index.html">HOME</a>
+<a href="shop.html">SHOP</a>
+<a href="gallery.html">GALLERY</a>
+<a href="about.html">ABOUT</a>
+<a href="cart.html">CART (<span id="cart-count">0</span>)</a>
+</nav>
+</header>
+
+<div class="hero" style="padding:50px 20px;">
+<h2>GALLERY - LIGHTBOX VIEW</h2>
+<p class="sub">CLICK ANY IMAGE TO VIEW LARGER - LIGHTBOX REQUIREMENT</p>
+</div>
+
+<div class="products-container">
+
+<div class="product">
+<img src="_images/tees.jpg" alt="Bouyz Diesel Tee black streetwear Pretoria affordable R299" onclick="openLightbox(this.src)">
+<div class="product-info">
+<h3>Look 1 - Diesel Tee Black</h3>
+</div>
+</div>
+
+<div class="product">
+<img src="_images/pants.webp" alt="Bouyz Diesel pants black affordable streetwear Hatfield" onclick="openLightbox(this.src)">
+<div class="product-info">
+<h3>Look 2 - Diesel Pants</h3>
+</div>
+</div>
+
+<div class="product">
+<img src="_images/hoodie.webp" alt="Bouyz hoodie black local brand Hatfield streetwear" onclick="openLightbox(this.src)">
+<div class="product-info">
+<h3>Look 3 - Hoodie Black</h3>
+</div>
+</div>
+
+<div class="product">
+<img src="_images/Jacket.webp" alt="Bouyz jacket Diesel inspired Pretoria streetwear" onclick="openLightbox(this.src)">
+<div class="product-info">
+<h3>Look 4 - Jacket</h3>
+</div>
+</div>
+
+<div class="product">
+<img src="_images/shorts.webp" alt="Bouyz shorts summer drop 2026 local brand" onclick="openLightbox(this.src)">
+<div class="product-info">
+<h3>Look 5 - Shorts Summer</h3>
+</div>
+</div>
+
+<div class="product">
+<img src="_images/tees.jpg" alt="Bouyz streetwear model Hatfield Pretoria local brand" onclick="openLightbox(this.src)">
+<div class="product-info">
+<h3>Look 6 - Street Style</h3>
+</div>
+</div>
+
+</div>
+
+<!-- Lightbox Requirement - Comprehensive and Fully Functional -->
+<div id="lightbox" onclick="closeLightbox()">
+<span>×</span>
+<img id="lightbox-img" alt="Gallery lightbox enlarged">
+</div>
+
+<div id="modal">
+<div class="modal-content">
+<p id="modal-text"></p>
+<br>
+<button class="btn btn-white" onclick="closeModal()">OK</button>
+</div>
+</div>
+
+<footer>
+<p>The Bouyz Clothing - Gallery Page</p>
+</footer>
+
+<script src="js_assets/cart.js"></script>
+<script src="js_assets/main.js"></script>
+
+</body>
+</html>

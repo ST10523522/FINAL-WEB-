@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact General Message | The Bouyz Clothing 0680266436</title>
+<meta name="description" content="Contact The Bouyz Clothing - General message form with validation AJAX email to admin@thebouyz.co.za">
+<meta name="keywords" content="contact Bouyz clothing, general message form, Hatfield contact">
+<link rel="stylesheet" href="css_assets/myfirststyle.css">
+</head>
+<body>
+
+<header>
+<img src="_images/logo.jpg" alt="Contact Bouyz Clothing logo general message form">
+<nav>
+<a href="index.html">HOME</a>
+<a href="shop.html">SHOP</a>
+<a href="contact.html">CONTACT</a>
+<a href="enquiry.html">ENQUIRY</a>
+<a href="cart.html">CART (<span id="cart-count">0</span>)</a>
+</nav>
+</header>
+
+<div class="hero" style="padding:40px 20px;">
+<h2>CONTACT US - GENERAL MESSAGE</h2>
+<p class="sub">VALIDATION + ERROR MESSAGES + EMAIL FUNCTIONALITY</p>
+</div>
+
+<!-- Contact Form - Comprehensive Form Controls -->
+<div class="form-container">
+<h3 style="color:white; margin-bottom:10px;">General Contact Form</h3>
+<p style="color:#888; font-size:13px; margin-bottom:15px;">
+For general messages to the organisation. Your info will be compiled into
+an email to admin@thebouyz.co.za
+</p>
+
+<form id="contactForm" onsubmit="return validateContact(event)" action="mailto:admin@thebouyz.co.za" method="post">
+
+<label for="c-name">Full Name *</label>
+<input type="text" id="c-name" placeholder="Enter full name min 3 chars e.g. John Doe" required minlength="3" aria-label="Full Name">
+
+<label for="c-email">Email Address *</label>
+<input type="email" id="c-email" placeholder="Enter valid email e.g. john@example.com" required aria-label="Email Address">
+
+<label for="c-phone">Phone Number *</label>
+<input type="tel" id="c-phone" placeholder="10 digits e.g. 0680266436" required pattern="[0-9]{10}" aria-label="Phone Number">
+
+<label for="c-type">Message Type *</label>
+<select id="c-type" required aria-label="Message Type">
+<option value="">Select message type</option>
+<option value="general">General Enquiry</option>
+<option value="complaint">Complaint</option>
+<option value="collaboration">Collaboration</option>
+<option value="feedback">Feedback</option>
+</select>
+
+<label for="c-msg">Full Message *</label>
+<textarea id="c-msg" placeholder="Type your full message min 10 characters" required minlength="10" rows="5" aria-label="Full Message"></textarea>
+
+<!-- Error and Success Messages - Validation Requirement -->
+<p id="c-error" class="error"></p>
+
+<button type="submit">Send Message via AJAX</button>
+
+</form>
+</div>
+
+<footer>
+<p>Contact Page - The Bouyz EST 2023</p>
+</footer>
+
+<script src="js_assets/cart.js"></script>
+<script src="js_assets/main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Enquiry Cost Availability | The Bouyz Clothing Products Services</title>
+<meta name="description" content="Enquire about Bouyz products services cost availability. Instant calculation total cost.">
+<meta name="keywords" content="enquiry Bouyz clothing, cost availability, product enquiry form">
+<link rel="stylesheet" href="css_assets/myfirststyle.css">
+</head>
+<body>
+
+<header>
+<img src="_images/logo.jpg" alt="Enquiry Bouyz Clothing cost availability form">
+<nav>
+<a href="index.html">HOME</a>
+<a href="shop.html">SHOP</a>
+<a href="enquiry.html">ENQUIRY</a>
+<a href="contact.html">CONTACT</a>
+<a href="cart.html">CART (<span id="cart-count">0</span>)</a>
+</nav>
+</header>
+
+<div class="hero" style="padding:40px 20px;">
+<h2>PRODUCT ENQUIRY - COST & AVAILABILITY</h2>
+<p class="sub">INSTANT RESPONSE ABOUT COST AND AVAILABILITY</p>
+</div>
+
+<!-- Enquiry Form - Input Processing and Response -->
+<div class="form-container">
+<h3 style="color:white; margin-bottom:10px;">Enquire About Products / Services</h3>
+<p style="color:#888; font-size:13px; margin-bottom:15px;">
+Enquire about products, volunteer, sponsor. Get instant response about
+cost and availability.
+</p>
+
+<form id="enquiryForm" onsubmit="return validateEnquiry(event)">
+
+<label for="e-name">Your Name *</label>
+<input type="text" id="e-name" placeholder="Enter your name" required minlength="3" aria-label="Your Name">
+
+<label for="e-email">Email Address *</label>
+<input type="email" id="e-email" placeholder="Enter email for response" required aria-label="Email Address">
+
+<label for="e-product">Select Product / Service *</label>
+<select id="e-product" required aria-label="Product Service">
+<option value="">Select product to enquire about</option>
+<option value="Tee">Diesel Tee - R299</option>
+<option value="Pants">Diesel Pants - R499</option>
+<option value="Hoodie">Diesel Hoodie - R599</option>
+<option value="Jacket">Diesel Jacket - R699</option>
+<option value="Cargo">Cargo Pants - R549</option>
+<option value="Shorts">Shorts - R399</option>
+</select>
+
+<label for="e-qty">Quantity (1-10) *</label>
+<input type="number" id="e-qty" placeholder="Enter quantity 1-10" min="1" max="10" required aria-label="Quantity">
+
+<label for="e-notes">Additional Notes</label>
+<textarea id="e-notes" placeholder="Any additional notes about your enquiry" rows="3" aria-label="Additional Notes"></textarea>
+
+<p id="e-error" class="error"></p>
+
+<button type="submit">Check Cost and Availability</button>
+
+<!-- Response Display - Input Processing and Response -->
+<p id="e-result" class="success" style="margin-top:15px;"></p>
+
+</form>
+</div>
+
+<footer>
+<p>Enquiry Page - The Bouyz EST 2023</p>
+</footer>
+
+<script src="js_assets/cart.js"></script>
+<script src="js_assets/main.js"></script>
+
+</body>
+</html>
